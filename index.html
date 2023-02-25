@@ -6,6 +6,10 @@
 </head>
 <body>
 <style>
+    *{
+    padding: 0;
+    margin: 0;
+    }
     .inputs {
     background-color: gray;
     color: white;
@@ -13,9 +17,17 @@
     #textEnter {
     color: yellow;
     }
+    div{
+        border: 3px solid red;
+        text-align: center;
+    }
+    #form {
+    color: orange;
+    background: blue;
+    }
 </style>
 <!--comments-->
-Roses are red, my name is David.
+<div>Roses are red,</div> my name is David.
 <p><h1 style="color:blue">
     Roses
     </h1>
@@ -36,10 +48,33 @@ Roses are red, my name is David.
 
 <button> Click ME!</button>
 <input id="textEnter" class="inputs" type="text">
-<input id="typeNum" class="inputs" type="number">
+<input style="background:green" id="typeNum" class="inputs" type="number">
 <input type="checkbox">
 <input type="submit">
 <input class="inputs" type="password">
+
+<hr>
+<div>
+    <input type="number" id="operand1">
+<!--    <h3>+</h3>-->
+    <span>+</span>
+    <input type="number" id="operand2">
+    <button id="sumBtn">SUM</button>
+    =
+    <span id="result"></span>
+</div>
+
+<script>
+    let operand1 = document.querySelector('#operand1');
+    let operand2 = document.querySelector('#operand2');
+    let sumBtn = document.querySelector('#sumBtn');
+    let result = document.querySelector('#result');
+    sumBtn.onclick = function() {
+    let res = +operand1.value + +operand2.value;
+    result.innerText = res;
+    console.log(res);
+    }
+</script>
 
 </body>
 </html>
